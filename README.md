@@ -17,15 +17,6 @@ office/
   setup.exe                # ODT executable - download once and commit (see below)
 ```
 
-## First-time setup
-
-1. **Push this folder to a GitHub repo** (private is fine if you bake a PAT into the URL).
-2. **Edit two strings** to point at your repo:
-   - In `ducky/payload.txt`, replace `YOUR-USERNAME/provisioning` near the bottom.
-   - In `bootstrap.ps1`, replace the same in the `$BaseUrl` default.
-3. **Download the Office Deployment Tool** from <https://aka.ms/ODT>, run the self-extractor, and commit the resulting `setup.exe` to `office/setup.exe`. (It's about 7 MB.)
-4. **Flash `ducky/payload.txt`** to the Rubber Ducky using Hak5's payload studio or `duckencoder`.
-
 ## Customizing
 
 - **Apps:** edit `apps.json`. Find IDs with `winget search <name>`.
