@@ -1,0 +1,38 @@
+REM ============================================================
+REM Windows Provisioning Payload
+REM ============================================================
+REM Opens an elevated PowerShell, clicks through UAC,
+REM then pulls bootstrap.ps1 from your GitHub repo and runs it.
+REM
+REM Tested on Windows 10 22H2 and Windows 11 23H2.
+REM Increase DELAY values if you see the payload race the OS
+REM on slow hardware or first-boot machines.
+REM ============================================================
+
+DELAY 2000
+
+REM --- Open Win+X menu, select "Terminal (Admin)" / "PowerShell (Admin)" ---
+GUI x
+DELAY 600
+STRING a
+DELAY 1800
+
+REM --- Click through UAC prompt (Yes button is on the left) ---
+LEFTARROW
+ENTER
+DELAY 3500
+
+REM --- Set a window title so you can visually confirm the script is running ---
+STRING $host.UI.RawUI.WindowTitle = 'Provisioning - Running'
+ENTER
+DELAY 200
+
+REM --- Force TLS 1.2 for older PowerShell hosts ---
+STRING [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+ENTER
+DELAY 200
+
+REM --- Pull bootstrap.ps1 and execute it ---
+REM CHANGE THIS URL to point at your fork/repo before flashing
+STRING iex (irm https://raw.githubusercontent.com/YOUR-USERNAME/provisioning/main/bootstrap.ps1)
+ENTER
