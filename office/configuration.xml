@@ -1,0 +1,33 @@
+<!--
+  Microsoft 365 Apps for Business - 64-bit, Current channel.
+  Generate variants of this file at https://config.office.com.
+  Run with:  setup.exe /configure configuration.xml
+-->
+<Configuration ID="cowork-provisioning">
+
+  <Add OfficeClientEdition="64" Channel="Current" MigrateArch="TRUE">
+    <Product ID="O365BusinessRetail">
+      <Language ID="en-us" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Bing" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Groove" />
+    </Product>
+  </Add>
+
+  <Property Name="SharedComputerLicensing"  Value="0" />
+  <Property Name="PinIconsToTaskbar"        Value="FALSE" />
+  <Property Name="SCLCacheOverride"         Value="0" />
+  <Property Name="AUTOACTIVATE"             Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN"         Value="TRUE" />
+  <Property Name="DeviceBasedLicensing"     Value="0" />
+
+  <Updates Enabled="TRUE" Channel="Current" />
+
+  <RemoveMSI />
+
+  <Display Level="None" AcceptEULA="TRUE" />
+
+</Configuration>
