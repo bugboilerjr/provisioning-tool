@@ -34,5 +34,5 @@ DELAY 200
 
 REM --- Pull bootstrap.ps1 and execute it ---
 REM CHANGE THIS URL to point at your fork/repo before flashing
-STRING iex (irm https://raw.githubusercontent.com/YOUR-USERNAME/provisioning/main/bootstrap.ps1)
+STRING iex (irm https://raw.githubusercontent.com/bugboilerjr/provisioning-tool/main/bootstrap.ps1)
 ENTER
