@@ -86,6 +86,7 @@ if (-not $SkipApps) {
         Write-Host ''
         Write-Host "    install $($app.name) [$($app.id)]" -ForegroundColor Yellow
         & winget install --id $app.id `
+                         --source winget `
                          --silent `
                          --accept-package-agreements `
                          --accept-source-agreements `
