@@ -15,7 +15,7 @@
 
 [CmdletBinding()]
 param(
-    [string]$BaseUrl   = 'https://raw.githubusercontent.com/YOUR-USERNAME/provisioning/main',
+    [string]$BaseUrl   = 'https://raw.githubusercontent.com/bugboilerjr/provisioning-tool/main',
     [switch]$SkipApps,
     [switch]$SkipPolicies,
     [switch]$SkipOffice
