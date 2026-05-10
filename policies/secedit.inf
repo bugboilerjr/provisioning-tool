@@ -1,0 +1,53 @@
+[Unicode]
+Unicode=yes
+[Version]
+signature="$CHICAGO$"
+Revision=1
+
+; ----------------------------------------------------------------------------
+; Local security policy applied via:
+;   secedit /configure /db <db> /cfg secedit.inf /overwrite /quiet
+;
+; These are conservative starting values. Tighten or loosen per your needs.
+; ----------------------------------------------------------------------------
+
+[System Access]
+; --- Password policy ---
+MinimumPasswordLength      = 12
+PasswordComplexity         = 1
+MaximumPasswordAge         = 90
+MinimumPasswordAge         = 1
+PasswordHistorySize        = 10
+ClearTextPassword          = 0
+
+; --- Account lockout policy ---
+LockoutBadCount            = 5
+ResetLockoutCount          = 30
+LockoutDuration            = 30
+
+; --- Misc ---
+EnableGuestAccount         = 0
+EnableAdminAccount         = 1
+
+[Event Audit]
+; 0=none, 1=success, 2=failure, 3=both
+AuditSystemEvents          = 3
+AuditLogonEvents           = 3
+AuditObjectAccess          = 2
+AuditPrivilegeUse          = 2
+AuditPolicyChange          = 3
+AuditAccountManage         = 3
+AuditProcessTracking       = 0
+AuditDSAccess              = 2
+AuditAccountLogon          = 3
+
+[Registry Values]
+; Require Ctrl+Alt+Del at sign-in
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableCAD=4,0
+; Don't display last signed-in user
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DontDisplayLastUserName=4,1
+; UAC: prompt admin for consent on the secure desktop
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ConsentPromptBehaviorAdmin=4,2
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop=4,1
+; Do not store LM hash on next password change
+MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash=4,1
