@@ -1,0 +1,13 @@
+{
+  "_comment": "Edit this list to control what bootstrap.ps1 installs. Find IDs with: winget search <name>",
+  "winget": [
+    { "id": "Google.Chrome",                "name": "Google Chrome" },
+    { "id": "Zoom.Zoom",                    "name": "Zoom" },
+    { "id": "7zip.7zip",                    "name": "7-Zip" },
+    { "id": "Notepad++.Notepad++",          "name": "Notepad++" },
+    { "id": "Microsoft.VisualStudioCode",   "name": "Visual Studio Code" },
+    { "id": "Microsoft.PowerToys",          "name": "PowerToys" },
+    { "id": "VideoLAN.VLC",                 "name": "VLC" },
+    { "id": "Git.Git",                      "name": "Git" }
+  ]
+}
