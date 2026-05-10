@@ -24,6 +24,10 @@ param(
 $ErrorActionPreference = 'Continue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# Allow downloaded scripts to run within this process only.
+# This does not change the machine's execution policy permanently.
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+
 # --- Workspace + logging ----------------------------------------------------
 $WorkDir = "$env:ProgramData\Provisioning"
 $LogDir  = Join-Path $WorkDir 'logs'
